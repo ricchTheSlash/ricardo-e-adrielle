@@ -189,28 +189,19 @@
     gap:18px;
   }
   .foto{
-    aspect-ratio:3/4;
+    position:relative;
+    padding-top:133.33%;          /* formato 3:4 sem depender de aspect-ratio (funciona em celular antigo) */
     border-radius:18px;
     overflow:hidden;
     background:linear-gradient(135deg,var(--rosa-claro),#ffb8cd);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    color:var(--vinho);
-    text-align:center;
-    padding:14px;
     box-shadow:0 12px 30px rgba(179,32,74,.12);
-    position:relative;
   }
   .foto img{
+    position:absolute;
+    top:0; left:0;
     width:100%; height:100%;
     object-fit:cover;
-    position:absolute; inset:0;
   }
-  .foto .icone{ font-size:2.4rem; margin-bottom:8px; }
-  .foto .legenda{ font-size:.9rem; font-weight:500; }
-  .foto .dica{ font-size:.72rem; opacity:.7; margin-top:4px; }
 
   /* ----- a nossa música ----- */
   .player-wrap{ max-width:520px; margin:0 auto; }
@@ -582,7 +573,71 @@
   <!-- GALERIA (os espaços estão prontos pras nossas fotos) -->
   <section class="fade">
     <h2 class="titulo-secao">Nossos momentos</h2>
-    <div class="galeria" id="galeria"></div>
+    <!-- As 62 fotos ficam escritas aqui direto (igual a seção dos olhos), e cada uma só carrega quando ela chega perto -->
+    <div class="galeria" id="galeria">
+      <div class="foto"><img src="fotos/foto-01.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-02.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-03.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-04.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-05.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-06.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-07.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-08.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-09.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-10.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-11.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-12.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-13.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-14.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-15.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-16.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-17.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-18.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-19.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-20.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-21.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-22.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-23.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-24.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-25.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-26.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-27.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-28.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-29.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-30.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-31.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-32.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-33.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-34.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-35.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-36.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-37.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-38.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-39.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-40.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-41.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-42.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-43.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-44.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-45.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-46.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-47.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-48.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-49.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-50.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-51.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-52.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-53.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-54.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-55.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-56.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-57.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-58.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-59.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-60.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-61.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto"><img src="fotos/foto-62.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+    </div>
   </section>
 
   <!-- OS OLHOS E O SORRISO DELA -->
@@ -620,16 +675,9 @@
   </footer>
 
 <script>
-  // ----- monta a galeria com todas as fotos -----
-  const TOTAL_FOTOS = 62;
-  const galeriaEl = document.getElementById('galeria');
-  for (let i = 1; i <= TOTAL_FOTOS; i++){
-    const n = String(i).padStart(2, '0');
-    const div = document.createElement('div');
-    div.className = 'foto';
-    div.innerHTML = '<img src="fotos/foto-' + n + '.jpg" alt="Eu e a Adrielle" loading="lazy">';
-    galeriaEl.appendChild(div);
-  }
+  // ----- galeria -----
+  // As fotos agora ficam escritas direto no HTML (mais confiável no celular),
+  // então não precisa de JavaScript pra montar a galeria.
 
   // ----- contador de tempo juntos -----
   // Pra mudar a data, troque os números abaixo (ano, mês-1, dia)

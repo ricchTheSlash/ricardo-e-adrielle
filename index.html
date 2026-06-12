@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ricardo & Adrielle — 1 ano de nós</title>
+
+<!-- Fontes bonitas (precisam de internet pra carregar) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --rosa: #ff5e8a;
+    --rosa-claro: #ffd6e2;
+    --vinho: #b3204a;
+    --dourado: #e9b949;
+    --texto: #5a2233;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:'Poppins', sans-serif;
+    color:var(--texto);
+    background: linear-gradient(160deg, #fff0f4 0%, #ffe3ec 40%, #ffd0e0 100%);
+    overflow-x:hidden;
+  }
+
+  /* ----- corações caindo no fundo ----- */
+  .coracao-cai{
+    position:fixed;
+    top:-40px;
+    color:var(--rosa);
+    opacity:.7;
+    pointer-events:none;
+    z-index:0;
+    animation:cair linear forwards;
+  }
+  @keyframes cair{
+    to{ transform:translateY(105vh) rotate(360deg); opacity:0; }
+  }
+
+  /* ----- abertura ----- */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+    z-index:1;
+  }
+  .hero .selo{
+    font-size:.9rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--vinho);
+    margin-bottom:10px;
+    opacity:.85;
+  }
+  .hero h1{
+    font-family:'Dancing Script', cursive;
+    font-size:clamp(3rem, 12vw, 7rem);
+    color:var(--vinho);
+    line-height:1.05;
+    text-shadow:0 4px 18px rgba(179,32,74,.18);
+  }
+  .hero .coracao-grande{
+    font-size:clamp(2rem,7vw,3.5rem);
+    margin:6px 0;
+    animation:bate 1.4s ease-in-out infinite;
+    display:inline-block;
+  }
+  @keyframes bate{
+    0%,100%{ transform:scale(1); }
+    50%{ transform:scale(1.18); }
+  }
+  .hero .subtitulo{
+    font-size:clamp(1rem,3.5vw,1.4rem);
+    font-weight:300;
+    margin-top:14px;
+  }
+  .hero .datas{
+    margin-top:8px;
+    font-weight:500;
+    color:var(--rosa);
+  }
+  .seta{
+    margin-top:40px;
+    font-size:1.6rem;
+    color:var(--vinho);
+    animation:flutua 1.8s ease-in-out infinite;
+  }
+  @keyframes flutua{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(10px); }
+  }
+
+  /* ----- seções ----- */
+  section{ position:relative; z-index:1; padding:70px 20px; }
+  .titulo-secao{
+    font-family:'Dancing Script', cursive;
+    font-size:clamp(2.2rem,7vw,3.4rem);
+    text-align:center;
+    color:var(--vinho);
+    margin-bottom:30px;
+  }
+
+  /* ----- contador ----- */
+  .contador-wrap{ text-align:center; }
+  .contador-frase{
+    font-weight:300;
+    font-size:clamp(1rem,3.5vw,1.3rem);
+    margin-bottom:26px;
+  }
+  .contador{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .bloco{
+    background:#fff;
+    border-radius:18px;
+    padding:18px 14px;
+    min-width:92px;
+    box-shadow:0 10px 26px rgba(179,32,74,.12);
+  }
+  .bloco .num{
+    font-size:clamp(1.8rem,6vw,2.6rem);
+    font-weight:600;
+    color:var(--rosa);
+    line-height:1;
+  }
+  .bloco .rotulo{
+    font-size:.75rem;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    margin-top:6px;
+    opacity:.7;
+  }
+
+  /* ----- carta / declaração ----- */
+  .carta{
+    max-width:680px;
+    margin:0 auto;
+    background:linear-gradient(180deg,#fffdfb,#fff6f9);
+    border:1px solid #ffd9e4;
+    border-radius:22px;
+    padding:40px 34px;
+    box-shadow:0 18px 50px rgba(179,32,74,.13);
+    position:relative;
+  }
+  .carta::before{
+    content:'💌';
+    position:absolute;
+    top:-26px; left:50%;
+    transform:translateX(-50%);
+    font-size:2.4rem;
+    filter:drop-shadow(0 6px 8px rgba(0,0,0,.12));
+  }
+  .carta p{
+    font-size:1.08rem;
+    font-weight:300;
+    line-height:1.9;
+    margin-bottom:18px;
+  }
+  .carta .abertura{ font-weight:500; color:var(--vinho); }
+  .carta .assinatura{
+    font-family:'Dancing Script', cursive;
+    font-size:1.8rem;
+    color:var(--rosa);
+    text-align:right;
+    margin-top:10px;
+  }
+
+  /* ----- galeria ----- */
+  .galeria{
+    max-width:980px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:18px;
+  }
+  .foto{
+    aspect-ratio:3/4;
+    border-radius:18px;
+    overflow:hidden;
+    background:linear-gradient(135deg,var(--rosa-claro),#ffb8cd);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:var(--vinho);
+    text-align:center;
+    padding:14px;
+    box-shadow:0 12px 30px rgba(179,32,74,.12);
+    position:relative;
+  }
+  .foto img{
+    width:100%; height:100%;
+    object-fit:cover;
+    position:absolute; inset:0;
+  }
+  .foto .icone{ font-size:2.4rem; margin-bottom:8px; }
+  .foto .legenda{ font-size:.9rem; font-weight:500; }
+  .foto .dica{ font-size:.72rem; opacity:.7; margin-top:4px; }
+
+  /* ----- botão de amor ----- */
+  .final{ text-align:center; }
+  .botao-amor{
+    font-family:'Poppins',sans-serif;
+    font-size:1.1rem;
+    font-weight:500;
+    color:#fff;
+    background:linear-gradient(135deg,var(--rosa),var(--vinho));
+    border:none;
+    padding:16px 38px;
+    border-radius:50px;
+    cursor:pointer;
+    box-shadow:0 12px 30px rgba(179,32,74,.3);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .botao-amor:hover{ transform:translateY(-3px) scale(1.03); box-shadow:0 16px 36px rgba(179,32,74,.4); }
+  .botao-amor:active{ transform:scale(.97); }
+
+  footer{
+    text-align:center;
+    padding:30px 20px 50px;
+    font-size:.85rem;
+    color:var(--vinho);
+    opacity:.8;
+    position:relative;
+    z-index:1;
+  }
+
+  /* ----- linha do tempo interativa ----- */
+  .timeline{ max-width:880px; margin:0 auto; }
+  .trilha{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    margin-bottom:34px;
+    padding:0 6px;
+  }
+  .trilha::before{
+    content:'';
+    position:absolute;
+    top:50%; left:4%; right:4%;
+    height:3px;
+    background:var(--rosa-claro);
+    transform:translateY(-50%);
+    z-index:0;
+  }
+  .marco{
+    width:50px; height:50px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid var(--rosa-claro);
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.3rem;
+    cursor:pointer;
+    position:relative;
+    z-index:1;
+    transition:transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+  }
+  .marco:hover{ transform:scale(1.12); }
+  .marco.ativo{
+    background:linear-gradient(135deg,var(--rosa),var(--vinho));
+    border-color:var(--vinho);
+    transform:scale(1.22);
+    box-shadow:0 8px 20px rgba(179,32,74,.35);
+  }
+  .palco{
+    background:#fff;
+    border-radius:22px;
+    padding:34px 28px;
+    box-shadow:0 16px 40px rgba(179,32,74,.13);
+    text-align:center;
+    min-height:230px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .momento{ display:none; }
+  .momento.ativo{ display:block; animation:aparece .5s ease; }
+  @keyframes aparece{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:none;} }
+  .momento .emoji-grande{ font-size:2.8rem; margin-bottom:10px; }
+  .momento .data{
+    display:inline-block;
+    background:var(--rosa-claro);
+    color:var(--vinho);
+    padding:5px 16px;
+    border-radius:30px;
+    font-size:.82rem;
+    font-weight:500;
+    margin-bottom:14px;
+  }
+  .momento h3{
+    font-family:'Dancing Script',cursive;
+    font-size:2.1rem;
+    color:var(--vinho);
+    margin-bottom:12px;
+  }
+  .momento p{ font-weight:300; line-height:1.8; max-width:560px; margin:0 auto; }
+  .controles{
+    display:flex; justify-content:center; gap:16px; margin-top:24px;
+  }
+  .controles button{
+    font-family:'Poppins',sans-serif;
+    font-weight:500;
+    background:#fff;
+    color:var(--vinho);
+    border:2px solid var(--rosa-claro);
+    padding:10px 24px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .controles button:hover{ background:var(--rosa); color:#fff; border-color:var(--rosa); }
+
+  /* ----- frase em destaque (nosso bordão) ----- */
+  .bordao{
+    background:linear-gradient(135deg, var(--vinho), #7d1535);
+    color:#fff;
+    text-align:center;
+    padding:90px 24px;
+  }
+  .bordao .aspas{
+    font-family:'Dancing Script', cursive;
+    font-size:5rem;
+    line-height:.2;
+    color:var(--rosa-claro);
+    opacity:.55;
+  }
+  .bordao .frase{
+    font-family:'Dancing Script', cursive;
+    font-size:clamp(1.9rem, 5.5vw, 3.2rem);
+    max-width:760px;
+    margin:22px auto;
+    line-height:1.35;
+  }
+  .bordao .frase .forte{ color:var(--dourado); }
+  .bordao .assinatura-bordao{
+    font-weight:300;
+    font-size:1rem;
+    opacity:.85;
+    margin-top:16px;
+    letter-spacing:1px;
+  }
+
+  /* ----- aparecer ao rolar ----- */
+  .fade{ opacity:0; transform:translateY(30px); transition:opacity .8s ease, transform .8s ease; }
+  .fade.visivel{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+  <!-- ABERTURA -->
+  <header class="hero">
+    <div class="selo">Nossa história</div>
+    <h1>Ricardo<br>&amp; Adrielle</h1>
+    <div class="coracao-grande">❤️</div>
+    <p class="subtitulo">Um ano que parece um sonho que eu não quero acordar</p>
+    <p class="datas">12 de junho de 2025 &nbsp;•&nbsp; 12 de junho de 2026</p>
+    <div class="seta">↓</div>
+  </header>
+
+  <!-- CONTADOR -->
+  <section class="contador-wrap fade">
+    <h2 class="titulo-secao">Quanto tempo de nós</h2>
+    <p class="contador-frase">Começamos no Dia dos Namorados... e o coração não parou um segundo desde então 💗</p>
+    <div class="contador">
+      <div class="bloco"><div class="num" id="dias">0</div><div class="rotulo">Dias</div></div>
+      <div class="bloco"><div class="num" id="horas">0</div><div class="rotulo">Horas</div></div>
+      <div class="bloco"><div class="num" id="minutos">0</div><div class="rotulo">Minutos</div></div>
+      <div class="bloco"><div class="num" id="segundos">0</div><div class="rotulo">Segundos</div></div>
+    </div>
+  </section>
+
+  <!-- LINHA DO TEMPO INTERATIVA -->
+  <section class="fade">
+    <h2 class="titulo-secao">Nossa história</h2>
+    <p style="text-align:center; font-weight:300; margin-bottom:30px;">Clica em cada momento pra reviver com a gente 💞</p>
+    <div class="timeline">
+      <div class="trilha">
+        <div class="marco ativo" data-i="0">🚗</div>
+        <div class="marco" data-i="1">🛋️</div>
+        <div class="marco" data-i="2">🎉</div>
+        <div class="marco" data-i="3">🏞️</div>
+        <div class="marco" data-i="4">🍷</div>
+        <div class="marco" data-i="5">🎂</div>
+      </div>
+
+      <div class="palco">
+        <div class="momento ativo">
+          <div class="emoji-grande">🚗</div>
+          <span class="data">12 de junho de 2025 • 22h</span>
+          <h3>A noite mais corajosa</h3>
+          <p>Eram umas dez da noite. Eu peguei uma grana e um carro emprestados, juntei toda a coragem que eu tinha e fui até a faculdade só pra te pedir em namoro. E quando você disse sim, voltei pra casa cantando bem alto, sem acreditar em como a vida estava sendo boa comigo. Foi ali que a nossa história começou.</p>
+        </div>
+        <div class="momento">
+          <div class="emoji-grande">🛋️</div>
+          <span class="data">do nosso jeitinho</span>
+          <h3>Nossos dias de frio</h3>
+          <p>Os dias de frio em casa, grudadinhos assistindo alguma coisa. Sem precisar de nada demais — só você, eu e o nosso cantinho.</p>
+        </div>
+        <div class="momento">
+          <div class="emoji-grande">🎉</div>
+          <span class="data">quando a gente vive</span>
+          <h3>Nossas loucuras</h3>
+          <p>E quando bate a vontade de viver, a gente vive! Os dias de loucura, as festas, a bagunça boa. Com você até o caos é divertido.</p>
+        </div>
+        <div class="momento">
+          <div class="emoji-grande">🏞️</div>
+          <span class="data">estrada afora</span>
+          <h3>Nós e o mundo</h3>
+          <p>A natureza, as viagens, os lugares novos. Cada aventura ao seu lado vira uma lembrança que eu quero guardar pra vida toda.</p>
+        </div>
+        <div class="momento">
+          <div class="emoji-grande">🍷</div>
+          <span class="data">sempre especiais</span>
+          <h3>Nossos jantares (e o nosso jeito bobo)</h3>
+          <p>Os jantares românticos que são sempre muitooo legais, e o nosso jeito bobo de ser um do outro. É nessas horas que eu percebo a sorte que eu tenho.</p>
+        </div>
+        <div class="momento">
+          <div class="emoji-grande">🎂</div>
+          <span class="data">12 de junho de 2026</span>
+          <h3>1 aninho de nós</h3>
+          <p>Um ano depois, no mesmo Dia dos Namorados, com muito mais amor e a vontade de viver tudo de novo com você, morr.</p>
+        </div>
+      </div>
+
+      <div class="controles">
+        <button id="anterior">‹ Anterior</button>
+        <button id="proximo">Próximo ›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DECLARAÇÃO (pode editar o texto à vontade!) -->
+  <section class="fade">
+    <h2 class="titulo-secao">Pra você, morr</h2>
+    <article class="carta">
+      <p class="abertura">Morr,</p>
+      <p>Tem um ano hoje que a minha vida ganhou outra cor. E olha que coisa do destino: a gente começou justo no Dia dos Namorados, e hoje, no Dia dos Namorados de novo, eu posso dizer que escolheria você outras mil vezes.</p>
+      <p>Obrigado por cada risada boba, cada conversa que vira madrugada, cada abraço que conserta o meu dia. Com você até as coisas simples viram lembrança que eu quero guardar pra sempre.</p>
+      <p>Eu não sei fazer mil promessas bonitas, mas tenho uma só: a de continuar te escolhendo todo dia, do meu jeito, com tudo que eu sou. Você é o meu lugar favorito.</p>
+      <p>Feliz um ano, meu amor. Que venham muitos outros, sempre nós dois.</p>
+      <p class="assinatura">Com todo o meu amor, Ricardo 💕</p>
+    </article>
+  </section>
+
+  <!-- GALERIA (os espaços estão prontos pras nossas fotos) -->
+  <section class="fade">
+    <h2 class="titulo-secao">Nossos momentos</h2>
+    <div class="galeria">
+      <div class="foto"><div class="icone">📷</div><div class="legenda">A noite que virou nós</div><div class="dica">foto em breve</div></div>
+      <div class="foto"><div class="icone">📷</div><div class="legenda">Nossos dias de frio</div><div class="dica">foto em breve</div></div>
+      <div class="foto"><div class="icone">📷</div><div class="legenda">Nossas loucuras &amp; festas</div><div class="dica">foto em breve</div></div>
+      <div class="foto"><div class="icone">📷</div><div class="legenda">Natureza &amp; viagens</div><div class="dica">foto em breve</div></div>
+      <div class="foto"><div class="icone">📷</div><div class="legenda">Jantares românticos</div><div class="dica">foto em breve</div></div>
+      <div class="foto"><div class="icone">📷</div><div class="legenda">Nosso jeito bobo</div><div class="dica">foto em breve</div></div>
+    </div>
+  </section>
+
+  <!-- NOSSO BORDÃO (frase em destaque) -->
+  <section class="bordao fade">
+    <div class="aspas">&ldquo;</div>
+    <p class="frase">Quando você me pergunta o quanto eu te amo e eu respondo que amo tudo... é mentira. Porque eu te amo <span class="forte">muito mais do que isso</span>.</p>
+    <p class="assinatura-bordao">— o nosso bordão 💞</p>
+  </section>
+
+  <!-- FINAL INTERATIVO -->
+  <section class="final fade">
+    <h2 class="titulo-secao">Te amo, morr</h2>
+    <p style="font-weight:300; margin-bottom:26px;">Aperta aqui e vê o que eu sinto por você 👇</p>
+    <button class="botao-amor" id="botaoAmor">Eu te amo ❤️</button>
+  </section>
+
+  <footer>
+    Feito com muito amor pelo Ricardo, pra Adrielle 💖
+  </footer>
+
+<script>
+  // ----- contador de tempo juntos -----
+  // Pra mudar a data, troque os números abaixo (ano, mês-1, dia)
+  const inicio = new Date(2025, 5, 12, 0, 0, 0); // 12 de junho de 2025
+
+  function atualizarContador(){
+    let diff = Math.floor((Date.now() - inicio.getTime()) / 1000);
+    if (diff < 0) diff = 0;
+    const dias = Math.floor(diff / 86400); diff -= dias * 86400;
+    const horas = Math.floor(diff / 3600); diff -= horas * 3600;
+    const minutos = Math.floor(diff / 60);
+    const segundos = diff - minutos * 60;
+    document.getElementById('dias').textContent = dias;
+    document.getElementById('horas').textContent = horas;
+    document.getElementById('minutos').textContent = minutos;
+    document.getElementById('segundos').textContent = segundos;
+  }
+  atualizarContador();
+  setInterval(atualizarContador, 1000);
+
+  // ----- corações caindo no fundo -----
+  function criarCoracao(){
+    const c = document.createElement('div');
+    c.className = 'coracao-cai';
+    c.textContent = Math.random() > .5 ? '❤' : '💗';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.fontSize = (Math.random() * 16 + 12) + 'px';
+    c.style.animationDuration = (Math.random() * 4 + 5) + 's';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 9000);
+  }
+  setInterval(criarCoracao, 450);
+
+  // ----- aparecer suave ao rolar -----
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visivel'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+  // ----- linha do tempo interativa -----
+  const marcos = document.querySelectorAll('.marco');
+  const momentos = document.querySelectorAll('.momento');
+  let atual = 0;
+  function mostrarMomento(i){
+    atual = (i + momentos.length) % momentos.length; // dá a volta no fim/início
+    marcos.forEach((m, idx) => m.classList.toggle('ativo', idx === atual));
+    momentos.forEach((m, idx) => m.classList.toggle('ativo', idx === atual));
+  }
+  marcos.forEach(m => m.addEventListener('click', () => mostrarMomento(+m.dataset.i)));
+  document.getElementById('proximo').addEventListener('click', () => mostrarMomento(atual + 1));
+  document.getElementById('anterior').addEventListener('click', () => mostrarMomento(atual - 1));
+
+  // ----- botão "eu te amo": explosão de corações -----
+  document.getElementById('botaoAmor').addEventListener('click', () => {
+    for (let i = 0; i < 40; i++){
+      setTimeout(criarCoracao, i * 40);
+    }
+  });
+</script>
+</body>
+</html>

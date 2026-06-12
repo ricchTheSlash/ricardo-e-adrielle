@@ -234,6 +234,55 @@
   .botao-amor:hover{ transform:translateY(-3px) scale(1.03); box-shadow:0 16px 36px rgba(179,32,74,.4); }
   .botao-amor:active{ transform:scale(.97); }
 
+  /* ----- explosão de amor (clique do botão) ----- */
+  .explosao{
+    position:fixed; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    pointer-events:none;
+    z-index:50;
+  }
+  .explosao .centro{ position:relative; width:0; height:0; }
+  .explosao .centro > *{ position:absolute; left:0; top:0; }
+
+  .coracao-central{
+    font-size:5rem;
+    transform:translate(-50%,-50%) scale(.2);
+    animation:explode-coracao .6s ease-out forwards;
+  }
+  @keyframes explode-coracao{
+    0%{ transform:translate(-50%,-50%) scale(.2); opacity:0; }
+    40%{ transform:translate(-50%,-50%) scale(1.5); opacity:1; }
+    100%{ transform:translate(-50%,-50%) scale(2.6); opacity:0; }
+  }
+
+  .particula{
+    font-size:1.6rem;
+    transform:translate(-50%,-50%);
+    animation:particula-voa .9s ease-out forwards;
+  }
+  @keyframes particula-voa{
+    0%{ transform:translate(-50%,-50%) translate(0,0) scale(.5); opacity:1; }
+    100%{ transform:translate(-50%,-50%) translate(var(--dx),var(--dy)) scale(1.1); opacity:0; }
+  }
+
+  .palavra-tudo{
+    font-family:'Dancing Script', cursive;
+    font-weight:700;
+    font-size:clamp(4rem, 18vw, 11rem);
+    color:var(--vinho);
+    text-shadow:0 6px 26px rgba(179,32,74,.4);
+    white-space:nowrap;
+    transform:translate(-50%,-50%) scale(0);
+    animation:tudo-aparece 1.9s cubic-bezier(.18,.9,.3,1.2) forwards;
+  }
+  @keyframes tudo-aparece{
+    0%{ transform:translate(-50%,-50%) scale(0) rotate(-8deg); opacity:0; }
+    35%{ transform:translate(-50%,-50%) scale(1.18) rotate(2deg); opacity:1; }
+    60%{ transform:translate(-50%,-50%) scale(1) rotate(0); opacity:1; }
+    82%{ transform:translate(-50%,-50%) scale(1); opacity:1; }
+    100%{ transform:translate(-50%,-50%) scale(1.12); opacity:0; }
+  }
+
   footer{
     text-align:center;
     padding:30px 20px 50px;
@@ -550,7 +599,6 @@
   <section class="bordao fade">
     <div class="aspas">&ldquo;</div>
     <p class="frase">Quando você me pergunta o quanto eu te amo e eu respondo que amo tudo... é mentira. Porque eu te amo <span class="forte">muito mais do que isso</span>.</p>
-    <p class="assinatura-bordao">— o nosso bordão 💞</p>
   </section>
 
   <!-- FINAL INTERATIVO -->
@@ -627,12 +675,47 @@
   document.getElementById('proximo').addEventListener('click', () => mostrarMomento(atual + 1));
   document.getElementById('anterior').addEventListener('click', () => mostrarMomento(atual - 1));
 
-  // ----- botão "eu te amo": explosão de corações -----
-  document.getElementById('botaoAmor').addEventListener('click', () => {
-    for (let i = 0; i < 40; i++){
-      setTimeout(criarCoracao, i * 40);
+  // ----- botão "eu te amo": coração explode e sai um TUDO -----
+  function explodirAmor(){
+    const cont = document.createElement('div');
+    cont.className = 'explosao';
+    const centro = document.createElement('div');
+    centro.className = 'centro';
+    cont.appendChild(centro);
+
+    // o coração que estoura no meio
+    const central = document.createElement('div');
+    central.className = 'coracao-central';
+    central.textContent = '❤️';
+    centro.appendChild(central);
+
+    // pedacinhos de coração voando pra todo lado
+    const N = 24;
+    for (let i = 0; i < N; i++){
+      const p = document.createElement('div');
+      p.className = 'particula';
+      p.textContent = Math.random() > .5 ? '❤️' : '💗';
+      const ang = (Math.PI * 2 * i) / N + Math.random() * 0.3;
+      const dist = 120 + Math.random() * 170;
+      p.style.setProperty('--dx', Math.cos(ang) * dist + 'px');
+      p.style.setProperty('--dy', Math.sin(ang) * dist + 'px');
+      p.style.animationDelay = (Math.random() * 0.1) + 's';
+      centro.appendChild(p);
     }
-  });
+
+    // a palavra TUDO saindo do meio, logo depois do coração estourar
+    const tudo = document.createElement('div');
+    tudo.className = 'palavra-tudo';
+    tudo.textContent = 'TUDO';
+    setTimeout(() => centro.appendChild(tudo), 250);
+
+    document.body.appendChild(cont);
+    setTimeout(() => cont.remove(), 2300);
+
+    // uns coraçõezinhos extras caindo, só pra comemorar
+    for (let i = 0; i < 16; i++){ setTimeout(criarCoracao, i * 45); }
+  }
+  document.getElementById('botaoAmor').addEventListener('click', explodirAmor);
 </script>
 </body>
 </html>

@@ -202,6 +202,25 @@
     width:100%; height:100%;
     object-fit:cover;
   }
+  /* fotos escondidas: nao carregam nem ocupam memoria do celular ate serem reveladas */
+  .foto.oculta{ display:none; }
+  .ver-mais-wrap{ text-align:center; margin-top:28px; }
+  .botao-fotos{
+    font-family:'Poppins',sans-serif;
+    font-size:1rem;
+    font-weight:500;
+    color:var(--vinho);
+    background:#fff;
+    border:2px solid var(--rosa);
+    border-radius:40px;
+    padding:13px 30px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(179,32,74,.14);
+    transition:transform .15s ease, background .15s ease;
+  }
+  .botao-fotos:hover{ background:var(--rosa-claro); }
+  .botao-fotos:active{ transform:scale(.96); }
+  .botao-fotos.fim{ border-color:var(--rosa-claro); color:var(--rosa); cursor:default; }
 
   /* ----- a nossa música ----- */
   .player-wrap{ max-width:520px; margin:0 auto; }
@@ -584,59 +603,62 @@
       <div class="foto"><img src="fotos/foto-07.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
       <div class="foto"><img src="fotos/foto-08.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
       <div class="foto"><img src="fotos/foto-09.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-10.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-11.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-12.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-13.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-14.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-15.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-16.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-17.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-18.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-19.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-20.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-21.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-22.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-23.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-24.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-25.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-26.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-27.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-28.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-29.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-30.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-31.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-32.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-33.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-34.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-35.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-36.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-37.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-38.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-39.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-40.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-41.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-42.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-43.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-44.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-45.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-46.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-47.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-48.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-49.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-50.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-51.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-52.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-53.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-54.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-55.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-56.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-57.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-58.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-59.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-60.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-61.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
-      <div class="foto"><img src="fotos/foto-62.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-10.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-11.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-12.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-13.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-14.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-15.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-16.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-17.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-18.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-19.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-20.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-21.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-22.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-23.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-24.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-25.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-26.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-27.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-28.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-29.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-30.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-31.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-32.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-33.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-34.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-35.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-36.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-37.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-38.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-39.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-40.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-41.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-42.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-43.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-44.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-45.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-46.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-47.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-48.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-49.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-50.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-51.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-52.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-53.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-54.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-55.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-56.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-57.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-58.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-59.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-60.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-61.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+      <div class="foto oculta"><img src="fotos/foto-62.jpg" alt="Eu e a Adrielle" loading="lazy"></div>
+    </div>
+    <div class="ver-mais-wrap">
+      <button class="botao-fotos" id="verMais">Ver mais fotos 💕</button>
     </div>
   </section>
 
@@ -675,9 +697,26 @@
   </footer>
 
 <script>
-  // ----- galeria -----
-  // As fotos agora ficam escritas direto no HTML (mais confiável no celular),
-  // então não precisa de JavaScript pra montar a galeria.
+  // ----- galeria: revela as fotos aos poucos (pra nao estourar a memoria do iPhone) -----
+  // As fotos ja estao escritas no HTML. As "ocultas" so aparecem quando ela clica no botao,
+  // assim o celular nunca recebe as 62 de uma vez.
+  (function(){
+    const LOTE = 9; // quantas fotos a mais aparecem a cada clique
+    const botao = document.getElementById('verMais');
+    if (!botao) return;
+    function revelarMais(){
+      const escondidas = document.querySelectorAll('.foto.oculta');
+      for (let i = 0; i < LOTE && i < escondidas.length; i++){
+        escondidas[i].classList.remove('oculta');
+      }
+      if (document.querySelectorAll('.foto.oculta').length === 0){
+        botao.textContent = 'Essas são todas as nossas fotos 🥰';
+        botao.classList.add('fim');
+        botao.disabled = true;
+      }
+    }
+    botao.addEventListener('click', revelarMais);
+  })();
 
   // ----- contador de tempo juntos -----
   // Pra mudar a data, troque os números abaixo (ano, mês-1, dia)
